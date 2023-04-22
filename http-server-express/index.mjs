@@ -18,11 +18,11 @@ app.post('/todo', (req, res) => {
 
     db.push(newTodo);
 
-    res.json(newTodo);
+    res.status(201).json(newTodo);
 });
 
 app.get('/todo', (req, res) => {
-    res.json(db);
+    res.status(200).json(db);
 })
 
 
