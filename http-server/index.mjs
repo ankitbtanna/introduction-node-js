@@ -12,6 +12,9 @@ const server = http.createServer((request, response) => {
         });
 
         request.on('end', () => { 
+            if (request.headers['content-type'] === 'application/json') { 
+                body = JSON.parse(body);
+            }
             console.log(body);
         });
 
